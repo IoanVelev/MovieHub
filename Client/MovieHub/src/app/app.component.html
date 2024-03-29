@@ -1,1 +1,9 @@
 <h2>MovieHub</h2>
+
+
+<h3 *ngFor="let movie of movies">
+  <ul>
+    <li>{{movie.name}}</li>
+    <p>{{movie.genre}}</p>
+  </ul>
+</h3>
