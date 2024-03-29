@@ -16,14 +16,21 @@ export class AppComponent implements OnInit {
   refreshMovies(){
     this.service.getMovies().subscribe(res => {
       this.movies = res;
-      
+      console.log(this.movies);
     });
   }
-
-
+  
   ngOnInit(): void {
     this.refreshMovies();
   }
 
-  
+  addMovie(name: string, year: string, genre: string){
+    this.service.addMovie(name, year, genre);
+  }
+
+
+  deleteMovie(id: string){
+    this.service.deleteMovie(id);
+  }
+
 }

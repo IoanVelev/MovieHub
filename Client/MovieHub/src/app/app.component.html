@@ -1,9 +1,14 @@
 <h2>MovieHub</h2>
 
+<input placeholder="movie name" #name>
+<input placeholder="year" #year>
+<input  placeholder="genre" #genre>
+<button (click)="addMovie(name.value, year.value, genre.value)">Add movie</button>
+
 
 <h3 *ngFor="let movie of movies">
   <ul>
-    <li>{{movie.name}}</li>
-    <p>{{movie.genre}}</p>
+    <li>{{movie.name}} - {{movie.genre}} ({{movie.year}})</li>
+    <button (click)="deleteMovie(movie.id)">Delete</button>
   </ul>
 </h3>
