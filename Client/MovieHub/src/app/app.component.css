@@ -1,9 +1,14 @@
+.movie-container {
+    margin: 40px;
+    display: flex;
+    justify-content: space-around;
+}
 
 .movie-card {
     width: 320px;
     height: 500px;
     border-radius: 20px;
-    /* overflow: hidden; */
+    overflow: hidden;
     border: 5px solid whitesmoke;
     position: relative;
 }
@@ -20,10 +25,18 @@
     height: 100%;
     position: absolute;
     top: 0;
-    right: 0;
+    right: -100%;
     background: dimgray;
     border-radius: 15px;
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+}
+
+.movie-card:hover .movie-card-body {
+    right: 0;
 }
 
 .movie-card-title {
@@ -33,12 +46,14 @@
 }
 
 
-.movie-card-genre, .movie-card-year {
+.movie-card-genre,
+.movie-card-year {
     font-size: 15px;
     font-weight: 600;
 }
 
-.genre, .year {
+.genre,
+.year {
     font-size: 15px;
     font-weight: 300;
 }
@@ -46,11 +61,20 @@
 .movie-card-desc {
     font-size: 20px;
     padding-top: 25px;
+    padding-bottom: 20px;
     font-weight: 300;
-    
 }
 
+.details-btn {
+    color: #1f3d47;
+    background: #8fabba;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    width: 120px;
+    position: absolute;
+    bottom: 2em;
 
-
-
-
+}
