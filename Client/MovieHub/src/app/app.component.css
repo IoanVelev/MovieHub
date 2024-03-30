@@ -1,4 +1,56 @@
-input {
-    display: flex;
-    margin-bottom: 10px;
+
+.movie-card {
+    width: 320px;
+    height: 500px;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    border: 5px solid whitesmoke;
+    position: relative;
 }
+
+.movie-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.movie-card-body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: dimgray;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.movie-card-title {
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+
+.movie-card-genre, .movie-card-year {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.genre, .year {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.movie-card-desc {
+    font-size: 20px;
+    padding-top: 25px;
+    font-weight: 300;
+    
+}
+
+
+
+
+

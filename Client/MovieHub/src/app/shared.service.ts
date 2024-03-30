@@ -10,18 +10,18 @@ export class SharedService {
 
 
   getMovies(){
-    let movieCollection = collection(this.fs, 'movies');
+    const movieCollection = collection(this.fs, 'movies');
     return collectionData(movieCollection, {idField: 'id'});
   }
 
   addMovie(name: string, year: string, genre: string){
-    let data = { name, year, genre };
-    let movieCollection = collection(this.fs, 'movies');
+    const data = { name, year, genre };
+    const movieCollection = collection(this.fs, 'movies');
     return addDoc(movieCollection, data);
   }
 
   deleteMovie(id: string){
-    let docRef = doc(this.fs, `movies/${id}`);
+    const docRef = doc(this.fs, `movies/${id}`);
     return deleteDoc(docRef);
   }
 }
