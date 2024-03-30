@@ -1,7 +1,12 @@
 .movie-container {
     margin: 40px;
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    
+    grid-auto-rows: auto;
+    
+    grid-gap: 4rem;
 }
 
 .movie-card {
@@ -76,5 +81,4 @@
     width: 120px;
     position: absolute;
     bottom: 2em;
-
 }
