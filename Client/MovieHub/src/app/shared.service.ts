@@ -14,8 +14,8 @@ export class SharedService {
     return collectionData(movieCollection, {idField: 'id'});
   }
 
-  addMovie(name: string, year: string, genre: string){
-    const data = { name, year, genre };
+  addMovie(name: string, year: string, genre: string, description: string, imageUrl: string){
+    const data = { name, year, genre, description, imageUrl };
     const movieCollection = collection(this.fs, 'movies');
     return addDoc(movieCollection, data);
   }

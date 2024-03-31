@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared.service';
+import { Movie } from 'src/app/types/movie';
 
 @Component({
   selector: 'app-movie-list',
@@ -16,7 +17,7 @@ export class MovieListComponent implements OnInit{
   refreshMovies(){
     this.service.getMovies().subscribe(res => {
       this.movies = res;
-      console.log(this.movies);
+      console.log(res);
     });
   }
   
@@ -24,8 +25,8 @@ export class MovieListComponent implements OnInit{
     this.refreshMovies();
   }
 
-  addMovie(name: string, year: string, genre: string){
-    this.service.addMovie(name, year, genre);
+  addMovie(name: string, year: string, genre: string, description: string, imageUrl: string){
+    this.service.addMovie(name, year, genre, description, imageUrl);
   }
 
 
