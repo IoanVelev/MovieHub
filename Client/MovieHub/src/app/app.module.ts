@@ -12,21 +12,23 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesModule } from './movies/movies.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorPageComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     MoviesModule,
+    UserModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
     FontAwesomeModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
