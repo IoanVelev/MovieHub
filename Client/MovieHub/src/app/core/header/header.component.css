@@ -20,3 +20,8 @@ header a {
     cursor: pointer;
     font-size: 20px;
 }
+
+header a:hover {
+    font-weight: 600;
+}
+

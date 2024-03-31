@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper .icon{
+    cursor: pointer;
+}
+
+.wrapper .icon:hover{
+    font-size: 20px;
+    font-weight: 600;
+}
+

@@ -17,4 +17,10 @@ body{
 .movie-list {
     text-align: center;
     margin: 80px;
+    font-size: 35px;
+}
+
+footer {
+    background-color: darkcyan;
+    padding: 20px;
 }
