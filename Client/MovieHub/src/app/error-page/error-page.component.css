@@ -1,24 +1,27 @@
 .error-page {
-    background-color: teal;
-    height: 100%;
-    text-align: center;
-    font-size: 65px;
-    padding: 150px;
+  background-color: teal;
+  height: 100%;
+  text-align: center;
+  font-size: 65px;
+  padding: 150px;
 }
 
-.error-page h2, p {
-    color: black;
+.error-page h2,
+p {
+  color: black;
 }
 
 .error-page a {
-    background-color: cadetblue;
- padding: 10px;
-    font-size: 30px;
-    cursor: pointer;
-
+  background-color: cadetblue;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .error-page a:hover {
-    background-color: darkolivegreen;
-    transition: 0.2s;
+  background-color: darkolivegreen;
+  transition: 0.2s;
 }
+
+

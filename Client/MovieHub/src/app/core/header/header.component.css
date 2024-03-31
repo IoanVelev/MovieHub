@@ -19,6 +19,7 @@ header a {
     color: whitesmoke;
     cursor: pointer;
     font-size: 20px;
+    text-decoration: none;
 }
 
 header a:hover {
