@@ -11,7 +11,7 @@
   text-align: center;
   background-color: darkcyan;
   border-radius: 20px;
-  height: 50vh;
+  height: 70vh;
   padding: 50px;
   width: 420px;
 }
@@ -56,4 +56,8 @@
     font-size: 20px;
     padding: 5px;
     border-radius: 5px;
+}
+
+.not-registered-user-msg {
+    margin-top: 10px;
 }
