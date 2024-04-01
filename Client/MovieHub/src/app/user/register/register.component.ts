@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 import { EMAIL_DOMAINS } from 'src/app/constants';
 import { emailValidator } from 'src/app/shared/utils/email.validator';
 import { matchPasswords } from 'src/app/shared/utils/passwords.validator';
@@ -21,18 +22,19 @@ export class RegisterComponent {
   })
 
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {}
 
   register(): void {
-    
+    const rawForm = this.form.getRawValue();
+    this.authService.register(rawForm.email!, rawForm.passGroup.password!)
+    .subscribe(() => {
+      this.router.navigate(['/login']);
+    });
     
     if (this.form.invalid) {
       console.log('INVALID FORM');
 
       return;
     }
-
-    this.router.navigate(['/login']);
-    
   }
 }
