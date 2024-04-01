@@ -1,26 +1,32 @@
 <main class="form-signin">
-    <div class="form-wrapper">
-      <h1 class="h3">Register</h1>
-  
-      <form #form="ngForm" (ngSubmit)="register(form)">
-        <div class="form-floating">
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="floatingInput"
-            placeholder="Email"
-            ngModel
-            #inputEmail="ngModel"
-            required
-          />
-  <ng-container *ngIf="inputEmail.touched">
-    <p class="error" *ngIf="inputEmail.errors?.['required']">
-      Email is required!
-  </p>
-  </ng-container>
-          
-        </div>
+  <div class="form-wrapper">
+    <h1 class="h3">Register</h1>
+
+    <form [formGroup]="form" (ngSubmit)="register()">
+      <div class="form-floating">
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Email"
+          formControlName="email"
+        />
+        <ng-container *ngIf="form.get('email')?.touched">
+          <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+            Email is required!
+          </p>
+          <p
+            class="error"
+            *ngIf="form.get('email')?.errors?.['emailValidator']"
+          >
+            Email is not valid!
+          </p>
+        </ng-container>
+      </div>
+
+
+      <ng-container formGroupName="passGroup">
         <div class="form-floating">
           <input
             type="password"
@@ -28,49 +34,51 @@
             name="password"
             id="floatingPassword"
             placeholder="Password"
-            ngModel
-            #inputPassword="ngModel"
-            required
-            minlength="5"
-          >
+            formControlName="password"
+          />
         </div>
   
-        <ng-container *ngIf="inputPassword.touched">
-          <p class="error" *ngIf="inputPassword.errors?.['required']">
+        <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
+          <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['required']">
             Password is required!
-           </p>
-          <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+          </p>
+          <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">
             Password must be at least 5 characters!
           </p>
         </ng-container>
-
-      <div class="form-floating">
-        <input
-          type="password"
-          name="rePass"
-          class="form-control"
-          id="floating-re-Password"
-          placeholder="Confirm password"
-          ngModel
-          #inputRePassword="ngModel"
-          required
-        >
-      </div>
-
-      <ng-container *ngIf="inputRePassword.touched">
-        <p class="error" *ngIf="inputRePassword.errors?.['required']">
-         Confirm password!
-        </p>
-        <p class="error" *ngIf="inputPassword.value !== inputRePassword.value">
-          Password missmath!
-        </p>
+  
+        <div class="form-floating">
+          <input
+            type="password"
+            name="rePassword"
+            class="form-control"
+            id="floating-re-Password"
+            placeholder="Confirm password"
+            formControlName="rePassword"
+          />
+        </div>
+  
+        <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
+          <p class="error" *ngIf="form.get('passGroup')?.get('rePassword')?.errors?.['required'] || form.get('passGroup')?.errors?.['matchPasswordsValidator']">
+           Password missmatch!
+          </p>
+        </ng-container>
       </ng-container>
-        <button class="register-btn" type="submit">Sign up</button>
 
-        <p class="registered-user-msg">
-            Already registered?
-            <a routerLink="/login">Sign In</a>
-        </p>
-      </form>
-    </div>
-  </main>
+      
+      <button
+        [disabled]="form.invalid"
+        [style]="{ backgroundColor: form.invalid ? 'red' : '' }"
+        class="register-btn"
+        type="submit"
+      >
+        Sign up
+      </button>
+
+      <p class="registered-user-msg">
+        Already registered?
+        <a routerLink="/login">Sign In</a>
+      </p>
+    </form>
+  </div>
+</main>
