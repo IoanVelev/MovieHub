@@ -13,12 +13,14 @@
           #inputEmail="ngModel"
           ngModel
           required
+          [appEmail]="domains"
         >
         
       </div>
 
       <ng-container *ngIf="inputEmail.touched">
         <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+        <p class="error" *ngIf="inputEmail.errors?.['emailValidator']">Email is invalid!</p>
       </ng-container>
       
 
