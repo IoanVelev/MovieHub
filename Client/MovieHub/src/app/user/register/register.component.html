@@ -63,6 +63,11 @@
            Password missmatch!
           </p>
         </ng-container>
+        
+          <p class="error" *ngIf="errorMessage">
+            {{errorMessage}}
+          </p>
+  
       </ng-container>
 
       

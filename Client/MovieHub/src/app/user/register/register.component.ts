@@ -13,6 +13,7 @@ import { matchPasswords } from 'src/app/shared/utils/passwords.validator';
 })
 export class RegisterComponent {
   domains = EMAIL_DOMAINS;
+  errorMessage: string | null = null;
 
   form = this.fb.group({
     email: ['', [Validators.required, emailValidator(EMAIL_DOMAINS)]],
@@ -27,8 +28,14 @@ export class RegisterComponent {
   register(): void {
     const rawForm = this.form.getRawValue();
     this.authService.register(rawForm.email!, rawForm.passGroup.password!)
-    .subscribe(() => {
-      this.router.navigate(['/login']);
+    .subscribe({
+      next: () => {
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        this.errorMessage = err.code;
+        this.errorMessage = this.errorMessage?.split('/')[1].replaceAll('-', ' ')!;
+      }
     });
     
     if (this.form.invalid) {
