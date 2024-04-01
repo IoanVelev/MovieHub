@@ -2,48 +2,70 @@
     <div class="form-wrapper">
       <h1 class="h3">Register</h1>
   
-      <form action="">
+      <form #form="ngForm" (ngSubmit)="register(form)">
         <div class="form-floating">
           <input
             type="email"
+            name="email"
             class="form-control"
             id="floatingInput"
             placeholder="Email"
+            ngModel
+            #inputEmail="ngModel"
             required
           />
-  
-          <p class="error">
-              Email is required!
-          </p>
+  <ng-container *ngIf="inputEmail.touched">
+    <p class="error" *ngIf="inputEmail.errors?.['required']">
+      Email is required!
+  </p>
+  </ng-container>
+          
         </div>
         <div class="form-floating">
           <input
             type="password"
             class="form-control"
+            name="password"
             id="floatingPassword"
             placeholder="Password"
+            ngModel
+            #inputPassword="ngModel"
             required
-          />
+            minlength="5"
+          >
         </div>
   
-        <p class="error">
-          Password is required!
-      </p>
+        <ng-container *ngIf="inputPassword.touched">
+          <p class="error" *ngIf="inputPassword.errors?.['required']">
+            Password is required!
+           </p>
+          <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+            Password must be at least 5 characters!
+          </p>
+        </ng-container>
 
       <div class="form-floating">
         <input
           type="password"
+          name="rePass"
           class="form-control"
           id="floating-re-Password"
           placeholder="Confirm password"
+          ngModel
+          #inputRePassword="ngModel"
           required
-        />
+        >
       </div>
 
-      <p class="error">
-        Password doesn't match!
-    </p>
-        <button class="login-btn" type="submit">Sign up</button>
+      <ng-container *ngIf="inputRePassword.touched">
+        <p class="error" *ngIf="inputRePassword.errors?.['required']">
+         Confirm password!
+        </p>
+        <p class="error" *ngIf="inputPassword.value !== inputRePassword.value">
+          Password missmath!
+        </p>
+      </ng-container>
+        <button class="register-btn" type="submit">Sign up</button>
 
         <p class="registered-user-msg">
             Already registered?
