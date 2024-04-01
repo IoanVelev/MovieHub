@@ -13,6 +13,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesModule } from './movies/movies.module';
 import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UserModule } from './user/user.module';
   imports: [
     BrowserModule,
     CoreModule,
+    SharedModule,
     MoviesModule,
     UserModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
