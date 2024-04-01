@@ -2,38 +2,53 @@
   <div class="form-wrapper">
     <h1 class="h3">Login</h1>
 
-    <form action="">
+    <form #form="ngForm" (ngSubmit)="login(form)">
       <div class="form-floating">
         <input
           type="email"
           class="form-control"
+          name="email"
           id="floatingInput"
           placeholder="Email"
+          #inputEmail="ngModel"
+          ngModel
           required
-        />
-
-        <p class="error">
-            Email is required!
-        </p>
+        >
+        
       </div>
+
+      <ng-container *ngIf="inputEmail.touched">
+        <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+      </ng-container>
+      
+
       <div class="form-floating">
         <input
           type="password"
           class="form-control"
           id="floatingPassword"
+          name="password"
           placeholder="Password"
+          ngModel
+          #inputPassword="ngModel"
           required
-        />
+        >
       </div>
 
-      <p class="error">
-        Password is required!
-    </p>
+      <ng-container *ngIf="inputPassword.touched">
+        <p class="error" *ngIf="inputPassword.errors?.['required']">
+          Password is required!
+        </p>
+        <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+          Password must be at least 5 characters!
+        </p>
+      </ng-container>
+
       <button class="login-btn" type="submit">Sign in</button>
       <p class="not-registered-user-msg">
         Still not registered?
         <a routerLink="/register">Sign up</a>
-    </p>
+      </p>
     </form>
   </div>
 </main>
