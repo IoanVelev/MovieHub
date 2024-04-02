@@ -1,0 +1,104 @@
+<main class="form-signin">
+    <div class="form-wrapper">
+      <h1 class="h3">Add movie</h1>
+  
+      <form>
+        <div class="form-floating">
+          <input
+            type="text"
+            name="movie"
+            class="form-control"
+            id="movieName"
+            placeholder="Movie name"
+            formControlName="movie"
+          />
+          <!-- <ng-container *ngIf="form.get('email')?.touched">
+            <p class="error" *ngIf="form.get('email')?.errors?.['required']">
+              Email is required!
+            </p>
+            <p
+              class="error"
+              *ngIf="form.get('email')?.errors?.['emailValidator']"
+            >
+              Email is not valid!
+            </p>
+          </ng-container> -->
+        </div>
+  
+  
+        <ng-container formGroupName="passGroup">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              name="genre"
+              id="genre"
+              placeholder="Genre"
+              formControlName="genre"
+            />
+          </div>
+    
+          <!-- <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
+            <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['required']">
+              Password is required!
+            </p>
+            <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">
+              Password must be at least 5 characters!
+            </p>
+          </ng-container> -->
+    
+          <div class="form-floating">
+            <input
+              type="text"
+              name="year"
+              class="form-control"
+              id="year"
+              placeholder="Year"
+              formControlName="year"
+            />
+          </div>
+
+          <div class="form-floating">
+            <input
+              type="text"
+              name="description"
+              class="form-control"
+              id="description"
+              placeholder="Description"
+              formControlName="description"
+            />
+          </div>
+
+          <div class="form-floating">
+            <input
+              type="url"
+              name="imageUrl"
+              class="form-control"
+              id="imageUrl"
+              placeholder="ImageUrl"
+              formControlName="imageUrl"
+            />
+          </div>
+    
+           <!-- <ng-container *ngIf="form.get('passGroup')?.get('rePassword')?.touched">
+            <p class="error" *ngIf="form.get('passGroup')?.get('rePassword')?.errors?.['required'] || form.get('passGroup')?.errors?.['matchPasswordsValidator']">
+             Password missmatch!
+            </p>
+          </ng-container>
+          
+            <p class="error" *ngIf="errorMessage">
+              {{errorMessage}}
+            </p> -->
+    
+        </ng-container> 
+  
+        
+        <button
+          class="add-btn"
+          type="submit"
+        >
+          Add movie
+        </button>
+      </form>
+    </div>
+  </main>
