@@ -34,6 +34,7 @@
           ngModel
           #inputPassword="ngModel"
           required
+          minlength="5"
         >
       </div>
 
@@ -45,6 +46,10 @@
           Password must be at least 5 characters!
         </p>
       </ng-container>
+
+      <p class="error" *ngIf="errorMessage">
+        {{errorMessage}}
+      </p>
 
       <button class="login-btn" type="submit">Sign in</button>
       <p class="not-registered-user-msg">
