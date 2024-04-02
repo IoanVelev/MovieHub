@@ -22,14 +22,13 @@ export class HeaderComponent implements OnInit {
         this.isLoggedIn = true;
       } else {
         this.authService.currentUserSig.set(null);
-        this.isLoggedIn = false;
       }
     });
   }
 
   logout(): void {
     this.authService.logout();
-
+    this.isLoggedIn = false;
     this.router.navigate(['/login']);
   }
 }
