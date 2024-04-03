@@ -13,7 +13,7 @@ export class MovieEditComponent implements OnInit {
   router = inject(Router);
   movieService = inject(SharedService);
   route = inject(ActivatedRoute);
-  movieName: string = '';
+  name: string = '';
   genre: string = '';
   year: string = '';
   description: string = '';
@@ -26,23 +26,25 @@ export class MovieEditComponent implements OnInit {
       this.param = urlParam['movieId'];
     });
     this.movieService.getMovieById(this.param).subscribe((res) => {
-      this.movieName = res.data()?.['name'];
+      this.name = res.data()?.['name'];
       this.genre =  res.data()?.['genre'];
       this.year =  res.data()?.['year'];
-      this.description = res.data()?.['description']
+      this.description = res.data()?.['description'];
       this.imageUrl =  res.data()?.['imageUrl'];
     });
+    
+    
   }
 
   form = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
-    genre: ['', [Validators.required, Validators.minLength(5)]],
+    name: [this.name, [Validators.required, Validators.minLength(2)]],
+    genre: [this.genre, [Validators.required, Validators.minLength(5)]],
     year: [
-      '',
+      this.year,
       [Validators.required, Validators.min(1950), Validators.max(2029)],
     ],
-    description: ['', [Validators.required, Validators.minLength(15)]],
-    imageUrl: ['', [Validators.required, Validators.pattern(/^https?:\/\//)]],
+    description: [this.description, [Validators.required, Validators.minLength(15)]],
+    imageUrl: [this.imageUrl, [Validators.required, Validators.pattern(/^https?:\/\//)]],
   });
 
   editMovie(): void {
@@ -52,7 +54,7 @@ export class MovieEditComponent implements OnInit {
     }
 
     const { name, genre, year, description, imageUrl } = this.form.value;
-    this.movieService.addMovie(name!, genre!, year!, description!, imageUrl!);
+    this.movieService.editMovie(name!, genre!, year!, description!, imageUrl!, this.param!);
 
     this.router.navigate(['/home']);
   }

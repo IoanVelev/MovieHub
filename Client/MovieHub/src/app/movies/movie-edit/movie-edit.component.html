@@ -1,6 +1,6 @@
 <main class="form-signin">
     <div class="form-wrapper">
-      <h1 class="h3">Add movie</h1>
+      <h1 class="h3">Edit movie</h1>
   
       <form [formGroup]="form" (ngSubmit)="editMovie()">
         <div class="form-floating">
@@ -9,9 +9,8 @@
             name="movie"
             class="form-control"
             id="movieName"
-            placeholder="Movie name"
+            placeholder="{{name}}"
             formControlName="name"
-            value="{{movieName}}"
           />
           <ng-container *ngIf="form.get('name')?.touched">
             <p class="error" *ngIf="form.get('name')?.errors?.['required']">
@@ -34,9 +33,8 @@
               class="form-control"
               name="genre"
               id="genre"
-              placeholder="Genre"
+              placeholder="{{genre}}"
               formControlName="genre"
-              value="{{genre}}"
             />
           </div>
     
@@ -55,9 +53,8 @@
               name="year"
               class="form-control"
               id="year"
-              placeholder="Year"
+              placeholder="{{year}}"
               formControlName="year"
-              value="{{year}}"
             />
           </div>
 
@@ -79,9 +76,8 @@
               name="description"
               class="form-control"
               id="description"
-              placeholder="Description"
+              placeholder="{{description}}"
               formControlName="description"
-              value="{{description}}"
             />
           </div>
 
@@ -100,10 +96,9 @@
               name="imageUrl"
               class="form-control"
               id="imageUrl"
-              placeholder="ImageUrl"
+              placeholder="{{imageUrl}}"
               formControlName="imageUrl"
-              value="{{imageUrl}}"
-            />
+            >
           </div>
 
           <ng-container *ngIf="form.get('imageUrl')?.touched">
@@ -120,8 +115,9 @@
         <button
           class="add-btn"
           type="submit"
+          (click)="editMovie()"
         >
-          Add movie
+          Edit movie
         </button>
       </form>
     </div>

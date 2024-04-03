@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, getFirestore } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, deleteDoc, doc, getDoc, getFirestore, updateDoc } from '@angular/fire/firestore';
 import { from } from 'rxjs';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class SharedService {
     const docRef  = doc(db, 'movies', id);
     const promise = getDoc(docRef).
     then((res) => {
-      return res
+      return res;
     })
     return from(promise);
   }
@@ -32,7 +32,12 @@ export class SharedService {
   }
 
   deleteMovie(id: string){
-    const docRef = doc(this.fs, `movies/${id}`);
+    const docRef = doc(this.fs, 'movies', id);
     return deleteDoc(docRef);
+  }
+
+  editMovie(name: string, genre: string, year: string, description: string, imageUrl: string, id: string){
+    const docRef = doc(this.fs, 'movies', id);
+    return updateDoc(docRef, { name, genre, year, description, imageUrl });
   }
 }
