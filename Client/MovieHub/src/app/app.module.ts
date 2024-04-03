@@ -15,12 +15,14 @@ import { HomeComponent } from './home/home.component';
 import { MoviesModule } from './movies/movies.module';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ErrorPageComponent,
     HomeComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
