@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-add-movie',
@@ -10,6 +11,10 @@ import { Router } from '@angular/router';
 export class AddMovieComponent {
   fb = inject(FormBuilder);
   router = inject(Router);
+  movieService = inject(SharedService);
+
+
+
   form = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     genre: ['', [Validators.required, Validators.minLength(5)]],
@@ -23,5 +28,10 @@ export class AddMovieComponent {
       console.log('INVALID FORM');
       return;
     }
+
+    const { name, genre, year, description, imageUrl } = this.form.value;
+    this.movieService.addMovie(name!, genre!, year!, description!, imageUrl!);
+
+    this.router.navigate(['/home']);
   }
 }
