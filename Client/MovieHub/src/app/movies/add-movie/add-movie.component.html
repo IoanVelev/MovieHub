@@ -101,12 +101,12 @@
             />
           </div>
 
-          <ng-container *ngIf="form.get('description')?.touched">
-            <p class="error" *ngIf="form.get('description')?.errors?.['required']">
-              Description is required!
+          <ng-container *ngIf="form.get('imageUrl')?.touched">
+            <p class="error" *ngIf="form.get('imageUrl')?.errors?.['required']">
+              Image URL is required!
             </p>
-            <p class="error" *ngIf="form.get('description')?.errors?.['minlength']">
-              Description must be longer!
+            <p class="error" *ngIf="form.get('imageUrl')?.errors?.['pattern']">
+              Image URL is not valid!
             </p>
           </ng-container>
         

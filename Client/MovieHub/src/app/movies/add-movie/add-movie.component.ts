@@ -15,13 +15,12 @@ export class AddMovieComponent {
     genre: ['', [Validators.required, Validators.minLength(5)]],
     year: ['', [Validators.required, Validators.min(1950), Validators.max(2029)]],
     description: ['', [Validators.required, Validators.minLength(15)]],
-    imageUrl: ['', [Validators.required]]
+    imageUrl: ['', [Validators.required, Validators.pattern(/^https?:\/\//)]]
   });
 
   addMovie(): void {
     if (this.form.invalid) {
       console.log('INVALID FORM');
-
       return;
     }
   }
