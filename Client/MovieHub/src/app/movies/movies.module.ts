@@ -5,13 +5,15 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
 import { MovieRoutingModule } from './movie-routing.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 
 
 @NgModule({
   declarations: [
     MovieListComponent,
-    AddMovieComponent
+    AddMovieComponent,
+    MovieDetailsComponent
   ],
   imports: [
     CommonModule,
