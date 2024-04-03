@@ -1,5 +1,5 @@
 .section {
-  height: 90vh;
+  height: 100vh;
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -69,6 +69,6 @@ a {
 }
 
 .movie-card-img {
-  height: 30vh;
-  width: 40%;
+  height: 50vh;
+  width: 40%
 }
