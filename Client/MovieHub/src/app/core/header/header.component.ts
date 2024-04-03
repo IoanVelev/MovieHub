@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
         this.authService.currentUserSig.set(null);
       }
     });
+    
   }
 
   logout(): void {

@@ -10,6 +10,7 @@ export class AuthService {
   firebaseAuth = inject(Auth);
   user$ = user(this.firebaseAuth);
   currentUserSig = signal<User | null | undefined>(undefined);
+  isLoggedIn: boolean = false;
 
   register(email: string, password: string): Observable<void> {
     const promise = createUserWithEmailAndPassword(
@@ -24,13 +25,13 @@ export class AuthService {
   login(email: string, password: string): Observable<void> {
     const promise = signInWithEmailAndPassword(this.firebaseAuth, email, password)
     .then(() => {});
-
+    
     return from(promise)
   }
 
   logout(): Observable<void> {
     const promise = signOut(this.firebaseAuth);
-
+    
     return from(promise);
   }
 }
