@@ -1,17 +1,17 @@
 <section class="section">
     <div class="movie-container">
-        <h3 class="movie-name">Cars2</h3>
+        <h3 class="movie-name">{{movieName}}</h3>
         <hr>
         <div class="movie-details">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/7f/Cars_2_Poster.jpg" class="movie-card-img" alt="">
-            <p class="movie-genre">Genre: </p>
-            <p class="movie-year">Year: </p>
-            <p class="movie-desc">Description: WGIJGAIGHAGIAOGHNIAGIAHGHAGIHAIGHAGIAGAGHAGGWAGAWGWAGAWGAWGWAGWAGAWGAWGgwagwagawgwagawagagaawhgwagagagwagwageagagageaagagageagegeagaeggeagea</p>
+            <img src="{{imageUrl}}" class="movie-card-img" alt="">
+            <p class="movie-genre">Genre: {{genre}}</p>
+            <p class="movie-year">Year: {{year}}</p>
+            <p class="movie-desc">Description: {{description}}</p>
 
         </div>
         <div class="buttons">
-            <button class="edit-btn">Edit</button>
-            <button class="delete-btn">Delete</button>
+            <button class="edit-btn"><a (click)="print()" routerLink="/movie/edit/{{param}}">Edit</a></button>
+            <button class="delete-btn"><a (click)="print()"routerLink="/movie/delete/{{param}}">Delete</a></button>
         </div>
         
     </div>
