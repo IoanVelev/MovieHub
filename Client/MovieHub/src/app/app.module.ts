@@ -16,6 +16,7 @@ import { MoviesModule } from './movies/movies.module';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
 import { AboutComponent } from './about/about.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AboutComponent } from './about/about.component';
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     FontAwesomeModule,
+    RouterModule,
     AppRoutingModule,
   ],
   providers: [],

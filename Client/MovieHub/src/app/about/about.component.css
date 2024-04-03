@@ -1,0 +1,16 @@
+.wrapper {
+    background-color: darkslategrey;
+    width: 90%;
+    height: 80vh;
+    text-align: center;
+    margin: 10px;
+    font-size: 30px;
+}
+
+.info {
+    text-align: center;
+}
+
+.p1 {
+    margin-bottom: 100px;
+}

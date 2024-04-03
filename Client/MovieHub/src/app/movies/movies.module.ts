@@ -21,7 +21,7 @@ import { MovieEditComponent } from './movie-edit/movie-edit.component';
     CommonModule,
     RouterModule,
     MovieRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [MovieListComponent, AddMovieComponent, MovieDetailsComponent, MovieEditComponent]
 })

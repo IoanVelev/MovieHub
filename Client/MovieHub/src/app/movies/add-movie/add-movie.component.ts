@@ -15,11 +15,11 @@ export class AddMovieComponent implements OnInit{
   movieService = inject(SharedService);
   authService = inject(AuthService);
 
-  userId: string = '';
+  userId: string | undefined= '';
 
   ngOnInit(): void {
     this.authService.user$.subscribe(res => {
-      this.userId = res!.uid;
+      this.userId = res?.uid;
     });
   }
 
