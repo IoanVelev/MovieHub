@@ -6,11 +6,17 @@ MovieHub is built with the idea to give information, which is related to the wor
 In this project Firebase is used both for server and database.
 
 MAIN FUNCTIONALITIES:
+
  -> Home page is available for everyone. There is no need to register or login
+ 
  -> In case you want to be able to do the other CRUD operations, you have to register and login first.
+
  -> Public pages are Home, About, Register and Login, as well as each movie details page
+ 
  -> Private pages are Create movie and Edit movie page
+ 
  -> Route guards are added 
+ 
  -> There is implemented Authorization functionality. Only owner of movie card can edit or delete the chosen movie
  
 
