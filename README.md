@@ -22,6 +22,8 @@ MAIN FUNCTIONALITIES:
 
 
 
+SCREENSHOTS:
+
 
 ![Screenshot 2024-04-03 233558](https://github.com/IoanVelev/MovieHub/assets/131281353/ada0c07d-ac42-41b7-86b3-b525872c6db4)
 ![Screenshot 2024-04-03 233758](https://github.com/IoanVelev/MovieHub/assets/131281353/84c62e1d-edc1-43d5-84c1-97f6af9fc6d9)
