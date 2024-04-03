@@ -46,10 +46,12 @@
           Password must be at least 5 characters!
         </p>
       </ng-container>
-
-      <p class="error" *ngIf="errorMessage">
-        {{errorMessage}}
-      </p>
+      
+      <ng-container *ngIf="errorMessage">
+        <p class="error" *ngIf="errorMessage == 'auth/invalid-credential'">
+          {{'Invalid credential'}}
+        </p>
+      </ng-container>
 
       <button class="login-btn" type="submit">Sign in</button>
       <p class="not-registered-user-msg">
