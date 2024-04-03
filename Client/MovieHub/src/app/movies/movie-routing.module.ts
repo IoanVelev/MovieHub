@@ -8,7 +8,7 @@ import { MovieEditComponent } from "./movie-edit/movie-edit.component";
 
 const routes: Routes = [{ path: 'movie/create', component: AddMovieComponent, canActivate: [AuthActivate]},
 { path: 'movies/:movieId', component: MovieDetailsComponent },
-{ path: 'movie/edit/:movieId', component: MovieEditComponent }
+{ path: 'movie/edit/:movieId', component: MovieEditComponent,canActivate: [AuthActivate] }
 ]
 
 

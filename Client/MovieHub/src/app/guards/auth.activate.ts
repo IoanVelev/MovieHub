@@ -25,7 +25,6 @@ export class AuthActivate implements CanActivate {
         this.authService.user$.subscribe(user => {
           if (user) {
             this.authService.isLoggedIn = true;
-            this.router.navigate(['/movie/create']);
           } else {
             this.authService.isLoggedIn = false;
             this.router.navigate(['/login']);
