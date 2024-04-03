@@ -9,10 +9,14 @@
             <p class="movie-desc">Description: {{description}}</p>
 
         </div>
-        <div class="buttons">
-            <button class="edit-btn"><a routerLink="/movie/edit/{{param}}">Edit</a></button>
-            <button class="delete-btn" [disabled]="!authService.isLoggedIn"><a (click)="deleteMovie()" routerLink="/movie/delete/{{param}}">Delete</a></button>
-        </div>
+
+        <ng-container *ngIf="isOwner">
+            <div class="buttons">
+                <button class="edit-btn"><a routerLink="/movie/edit/{{param}}">Edit</a></button>
+                <button class="delete-btn" [disabled]="!authService.isLoggedIn"><a (click)="deleteMovie()" routerLink="/movie/delete/{{param}}">Delete</a></button>
+            </div>
+        </ng-container>
+        
         
     </div>
 </section>

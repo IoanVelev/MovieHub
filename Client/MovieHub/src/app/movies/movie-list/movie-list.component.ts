@@ -25,12 +25,12 @@ export class MovieListComponent implements OnInit{
     this.refreshMovies();
   }
 
-  addMovie(name: string, year: string, genre: string, description: string, imageUrl: string){
-    this.service.addMovie(name, year, genre, description, imageUrl);
-  }
+  // addMovie(name: string, year: string, genre: string, description: string, imageUrl: string){
+  //   this.service.addMovie(name, year, genre, description, imageUrl);
+  // }
 
 
-  deleteMovie(id: string){
-    this.service.deleteMovie(id);
-  }
+  // deleteMovie(id: string){
+  //   this.service.deleteMovie(id);
+  // }
 }

@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -8,11 +9,19 @@ import { SharedService } from 'src/app/shared.service';
   templateUrl: './add-movie.component.html',
   styleUrls: ['./add-movie.component.css']
 })
-export class AddMovieComponent {
+export class AddMovieComponent implements OnInit{
   fb = inject(FormBuilder);
   router = inject(Router);
   movieService = inject(SharedService);
+  authService = inject(AuthService);
 
+  userId: string = '';
+
+  ngOnInit(): void {
+    this.authService.user$.subscribe(res => {
+      this.userId = res!.uid;
+    });
+  }
 
 
   form = this.fb.group({
@@ -30,7 +39,7 @@ export class AddMovieComponent {
     }
 
     const { name, genre, year, description, imageUrl } = this.form.value;
-    this.movieService.addMovie(name!, genre!, year!, description!, imageUrl!);
+    this.movieService.addMovie(name!, genre!, year!, description!, imageUrl!, this.userId!);
 
     this.router.navigate(['/home']);
   }

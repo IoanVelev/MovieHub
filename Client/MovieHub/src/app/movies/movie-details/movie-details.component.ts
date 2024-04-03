@@ -13,6 +13,9 @@ export class MovieDetailsComponent implements OnInit {
   movieService = inject(SharedService);
   authService = inject(AuthService);
 
+  isOwner: boolean = false;
+  userId: string | undefined = '';
+
   param: string = '';
   movieName: string = '';
   genre: string = '';
@@ -21,15 +24,21 @@ export class MovieDetailsComponent implements OnInit {
   imageUrl: string = '';
 
   ngOnInit(): void {
+    this.authService.user$.subscribe(res => {
+      this.userId = res?.uid;
+    });
+
     this.route.params.subscribe((urlParam) => {
       this.param = urlParam['movieId'];
     });
+
     this.movieService.getMovieById(this.param).subscribe((res) => {
       this.movieName = res.data()?.['name'];
       this.genre = res.data()?.['genre'];
       this.year = res.data()?.['year'];
       this.description = res.data()?.['description'];
       this.imageUrl = res.data()?.['imageUrl'];
+      this.isOwner = res.data()?.['ownerId'] === this.userId;
     });
   }
 

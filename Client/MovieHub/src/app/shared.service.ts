@@ -25,8 +25,8 @@ export class SharedService {
     return from(promise);
   }
 
-  addMovie(name: string, genre: string, year: string, description: string, imageUrl: string){
-    const data = { name, genre, year, description, imageUrl };
+  addMovie(name: string, genre: string, year: string, description: string, imageUrl: string, ownerId: string){
+    const data = { name, genre, year, description, imageUrl, ownerId };
     const movieCollection = collection(this.fs, 'movies');
     return addDoc(movieCollection, data);
   }

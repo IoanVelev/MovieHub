@@ -58,7 +58,7 @@
 }
 
 .delete-btn {
-  background-color: gray;
+  background-color: red;
   font-size: 25px;
   padding: 8px;
   border-radius: 5%;
