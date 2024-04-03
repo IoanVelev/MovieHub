@@ -1,7 +1,7 @@
 # MovieHub
 This is MovieHub Angular Application.
 
-MovieHub is built with the idea to give information, which is related to the world of movies. Movies are visualized n the shape of cards with some dynamical behavior.
+MovieHub is built with the idea to give information, which is related to the world of movies. Movies are visualized in the shape of cards with some dynamical behavior.
 
 In this project Firebase is used both for server and database.
 
@@ -18,7 +18,7 @@ MAIN FUNCTIONALITIES:
  -> Route guards are added 
  
  -> There is implemented Authorization functionality. Only owner of movie card can edit or delete the chosen movie
- 
+
 
 
 
