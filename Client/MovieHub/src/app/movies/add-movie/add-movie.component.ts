@@ -11,10 +11,11 @@ export class AddMovieComponent {
   fb = inject(FormBuilder);
   router = inject(Router);
   form = this.fb.group({
-    name: ['', [Validators.required]],
-    genre: ['', [Validators.required]],
-    year: ['', [Validators.required]],
-    description: ['', [Validators.required]],
+    name: ['', [Validators.required, Validators.minLength(2)]],
+    genre: ['', [Validators.required, Validators.minLength(5)]],
+    year: ['', [Validators.required, Validators.min(1950), Validators.max(2029)]],
+    description: ['', [Validators.required, Validators.minLength(15)]],
+    imageUrl: ['', [Validators.required]]
   });
 
   addMovie(): void {

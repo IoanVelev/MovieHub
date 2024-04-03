@@ -57,11 +57,3 @@
       padding: 5px;
       border-radius: 5px;
   }
-
-  .registered-user-msg {
-    margin-top: 10px;
-  }
-
-  .registered-user-msg a:hover {
-    font-weight: 600;
-  }

@@ -2,7 +2,7 @@
     <div class="form-wrapper">
       <h1 class="h3">Add movie</h1>
   
-      <form [formGroup]="form">
+      <form [formGroup]="form" (ngSubmit)="addMovie()">
         <div class="form-floating">
           <input
             type="text"
@@ -10,23 +10,23 @@
             class="form-control"
             id="movieName"
             placeholder="Movie name"
-            formControlName="movie"
+            formControlName="name"
           />
-          <!-- <ng-container *ngIf="form.get('email')?.touched">
-            <p class="error" *ngIf="form.get('email')?.errors?.['required']">
-              Email is required!
+          <ng-container *ngIf="form.get('name')?.touched">
+            <p class="error" *ngIf="form.get('name')?.errors?.['required']">
+              Movie name is required!
             </p>
             <p
               class="error"
-              *ngIf="form.get('email')?.errors?.['emailValidator']"
+              *ngIf="form.get('name')?.errors?.['minlength']"
             >
-              Email is not valid!
+            Movie name must be at least 2 characters!
             </p>
-          </ng-container> -->
+          </ng-container>
         </div>
   
   
-        <ng-container formGroupName="passGroup">
+       
           <div class="form-floating">
             <input
               type="text"
@@ -38,14 +38,14 @@
             />
           </div>
     
-          <!-- <ng-container *ngIf="form.get('passGroup')?.get('password')?.touched">
-            <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['required']">
-              Password is required!
+          <ng-container *ngIf="form.get('genre')?.touched">
+            <p class="error" *ngIf="form.get('genre')?.errors?.['required']">
+              Genre is required!
             </p>
-            <p class="error" *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']">
-              Password must be at least 5 characters!
+            <p class="error" *ngIf="form.get('genre')?.errors?.['minlength']">
+              Genre must be at least 5 characters!
             </p>
-          </ng-container> -->
+          </ng-container>
     
           <div class="form-floating">
             <input
@@ -58,6 +58,18 @@
             />
           </div>
 
+          <ng-container *ngIf="form.get('year')?.touched">
+            <p class="error" *ngIf="form.get('year')?.errors?.['required']">
+              Year is required!
+            </p>
+            <p class="error" *ngIf="form.get('year')?.errors?.['min']">
+              Year must be between 1950 and 2029!
+            </p>
+            <p class="error" *ngIf="form.get('year')?.errors?.['max']">
+              Year must be between 1950 and 2029!
+            </p>
+          </ng-container>
+
           <div class="form-floating">
             <input
               type="text"
@@ -69,6 +81,15 @@
             />
           </div>
 
+          <ng-container *ngIf="form.get('description')?.touched">
+            <p class="error" *ngIf="form.get('description')?.errors?.['required']">
+              Description is required!
+            </p>
+            <p class="error" *ngIf="form.get('description')?.errors?.['minlength']">
+              Description must be longer!
+            </p>
+          </ng-container>
+
           <div class="form-floating">
             <input
               type="url"
@@ -79,7 +100,16 @@
               formControlName="imageUrl"
             />
           </div>
-        </ng-container> 
+
+          <ng-container *ngIf="form.get('description')?.touched">
+            <p class="error" *ngIf="form.get('description')?.errors?.['required']">
+              Description is required!
+            </p>
+            <p class="error" *ngIf="form.get('description')?.errors?.['minlength']">
+              Description must be longer!
+            </p>
+          </ng-container>
+        
   
         
         <button
