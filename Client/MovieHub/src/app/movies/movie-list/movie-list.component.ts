@@ -17,6 +17,7 @@ export class MovieListComponent implements OnInit{
   refreshMovies(){
     this.service.getMovies().subscribe(res => {
       this.movies = res;
+      //console.log(this.movies);
     });
   }
   
