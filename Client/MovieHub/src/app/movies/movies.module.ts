@@ -17,10 +17,10 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
   ],
   imports: [
     CommonModule,
-    MovieRoutingModule,
     RouterModule,
+    MovieRoutingModule,
     ReactiveFormsModule
   ],
-  exports: [MovieListComponent]
+  exports: [MovieListComponent, AddMovieComponent, MovieDetailsComponent]
 })
 export class MoviesModule { }

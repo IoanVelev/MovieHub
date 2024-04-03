@@ -1,0 +1,65 @@
+.section {
+    height: 90vh;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    border: 3px solid whitesmoke;
+    background-color: darkcyan;
+    padding: 40px;
+}
+
+.movie-container {
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
+
+.movie-name {
+    font-size: 30px;
+}
+
+/* .movie-details {
+    
+} */
+
+.movie-card-img {
+margin: 10px;
+border: 3px solid whitesmoke;
+}
+
+.movie-genre {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.movie-year {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.movie-desc {
+    padding: 10px;
+    height: 20vh;
+    font-weight: bold;
+    word-break:break-all;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.edit-btn {
+    background-color: gray;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5%;
+}
+
+.delete-btn {
+    background-color: gray;
+    font-size: 25px;
+    padding: 5px;
+    border-radius: 5%;
+}
