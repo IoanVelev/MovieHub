@@ -6,6 +6,7 @@ import { MovieRoutingModule } from './movie-routing.module';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MovieEditComponent } from './movie-edit/movie-edit.component';
 
 
 
@@ -13,7 +14,8 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
   declarations: [
     MovieListComponent,
     AddMovieComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    MovieEditComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,6 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     MovieRoutingModule,
     ReactiveFormsModule
   ],
-  exports: [MovieListComponent, AddMovieComponent, MovieDetailsComponent]
+  exports: [MovieListComponent, AddMovieComponent, MovieDetailsComponent, MovieEditComponent]
 })
 export class MoviesModule { }
