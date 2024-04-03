@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   router = inject(Router);
   authService = inject(AuthService);
   isLoggedIn: boolean = false;
+  username: string | undefined;
 
   ngOnInit(): void {
     this.authService.user$.subscribe(user => {
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
         this.authService.currentUserSig.set({
           email: user.email!
         });
+        this.username = user.email?.split('@')[0];
 
         this.isLoggedIn = true;
       } else {

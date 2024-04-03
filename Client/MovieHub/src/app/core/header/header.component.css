@@ -3,6 +3,11 @@
     padding: 10px;
 }
 
+.welcome-msg {
+    font-size: 20px;
+    text-align: center;
+}
+
 .header ul {
     display: flex;
     justify-content:flex-end;
@@ -13,12 +18,13 @@ header li {
     list-style: none;
     margin: .35em;
     padding: 5px;
+    font-size: 20px;
 }
 
 header a {
     color: whitesmoke;
     cursor: pointer;
-    font-size: 20px;
+    
     text-decoration: none;
 }
 

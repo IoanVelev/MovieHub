@@ -1,6 +1,9 @@
 <header>
   <div class="header">
     <h1>MovieHub</h1>
+    <ng-container *ngIf="isLoggedIn">
+      <li class="welcome-msg">Welcome back {{username}}</li>
+    </ng-container>
 
     <nav class="nav-bar">
       <ul>
