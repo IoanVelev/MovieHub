@@ -10,8 +10,8 @@
 
         </div>
         <div class="buttons">
-            <button class="edit-btn"><a (click)="print()" routerLink="/movie/edit/{{param}}">Edit</a></button>
-            <button class="delete-btn"><a (click)="print()"routerLink="/movie/delete/{{param}}">Delete</a></button>
+            <button class="edit-btn"><a routerLink="/movie/edit/{{param}}">Edit</a></button>
+            <button class="delete-btn" [disabled]="!authService.isLoggedIn"><a (click)="deleteMovie()" routerLink="/movie/delete/{{param}}">Delete</a></button>
         </div>
         
     </div>

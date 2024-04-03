@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -10,6 +11,8 @@ import { SharedService } from 'src/app/shared.service';
 export class MovieDetailsComponent implements OnInit {
   route = inject(ActivatedRoute);
   movieService = inject(SharedService);
+  authService = inject(AuthService);
+
   param: string = '';
   movieName: string = '';
   genre: string = '';
@@ -30,5 +33,12 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
-  print(): void {}
+  deleteMovie(): void {
+
+    if (!this.authService.isLoggedIn) {
+      return;
+    }
+    
+    this.movieService.deleteMovie(this.param);
+  }
 }
