@@ -22,16 +22,11 @@
         position: relative;
         font-size: small;
     }
-
-    
-   
-
-    
 }
 
 .movie-card {
-    width: 220px;
-    height: 70vh;
+    width: 280px;
+    height: 50vh;
     border-radius: 20px;
     overflow: hidden;
     border: 5px solid whitesmoke;
