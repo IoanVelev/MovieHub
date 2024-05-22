@@ -1,8 +1,21 @@
+
+/* @media screen and (max-width: 30rem) {
+    *{
+        max-width: 100%;
+    }
+} */
+
 .header {
     background-color: darkcyan;
     padding: 10px;
 }
 
+
+/* @media screen and (max-width: 30rem) {
+    .header {
+        max-width:150rem;
+    }
+} */
 .welcome-msg {
     font-size: 20px;
     text-align: center;

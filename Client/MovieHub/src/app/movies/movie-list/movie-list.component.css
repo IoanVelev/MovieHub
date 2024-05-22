@@ -6,9 +6,32 @@
     padding-bottom: 70px;
 }
 
+@media screen and (max-width: 768px) {
+    .movie-container {
+        grid-template-columns: repeat(2, 3fr);
+        grid-gap: 1rem;
+        
+    }
+    .movie-card {
+        max-width: 10rem;
+        max-height: 50vh;
+        height: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 5px solid whitesmoke;
+        position: relative;
+        font-size: small;
+    }
+
+    
+   
+
+    
+}
+
 .movie-card {
-    width: 280px;
-    height: 450px;
+    width: 220px;
+    height: 70vh;
     border-radius: 20px;
     overflow: hidden;
     border: 5px solid whitesmoke;
@@ -38,12 +61,12 @@
 }
 
 .movie-card:hover .movie-card-body {
-    right: 0;
+    right:0;
 }
 
 .movie-card-title {
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
 }
 
